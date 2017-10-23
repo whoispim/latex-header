@@ -1,0 +1,65 @@
+\documentclass[ngerman,titlepage,paper=A4]{scrreprt} %!scrreprt für chapters, sonst scrartcl
+\usepackage[ngerman]{babel}    %!deutsche begriffe (inhaltsverzeichnis<>tableofcontents etc) + silbentrennung
+\usepackage[utf8]{inputenc}    %!richtiges lesen der datei inkl äöü
+\usepackage[T1]{fontenc}       %!fontsippe + richtiges schreiben inkl äöü
+\usepackage{xcolor}            %farbiger text, lass ich mal drinne
+\usepackage[]{graphicx}        %!grafiken, leute!
+\usepackage{amsmath}           %!mathe
+
+\usepackage{amstext}           %!text in math
+\usepackage{setspace}          %!s.u.
+\onehalfspacing                %!eineinhalbzeiliger abstand
+\usepackage[super,comma,numbers,square,sort,compress]{natbib} %!zitieren tut man eben so
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=3cm]{geometry} %!ränder doppelseitig: twoside,bindingoffset=1cm
+\usepackage{multirow}          %!zeilen fusen in tabellen
+\usepackage[margin=8pt,labelfont=bf,format=plain, indention=.5cm]{caption} %hübsche, abgehobene captions
+\usepackage{float}             %definieren neuer floats
+\usepackage{rotating}          %gedrehte bilder+captions
+\usepackage{siunitx}%korrekte SI-units
+%SANSKRAM
+%\renewcommand{\familydefault}{\sfdefault} %sans serif
+%\sisetup{detect-all}           %sans serif für siunitx-package
+%\usepackage[bb=fourier,calscaled=.94]{mathalfa} %!sans seif schattenbuchstaben
+%\usepackage{sansmath}          %Serifenlose Mathematik
+%\sansmath                      %ab hier, sonst \unsansmath
+\newcommand{\fakesc}[1]{\uppercase{\footnotesize{#1}\normalsize}} %falsche kapitälchen ole!
+\setlength{\parindent}{0pt}    %keine einrückung nach absatz
+\usepackage{paralist}          %kompakteres itemize und enumerate
+\usepackage{upgreek}           %gegen schiefe griechen
+\usepackage{textgreek}           %gegen schiefe griechen
+\usepackage{textcomp}          %dem itemize die kugel geben (bullet)
+\usepackage{esvect}            %schickere Vektorpfeile
+\usepackage{booktabs}          %\toprule \midrule \bottomrule in tabellen
+\usepackage[colorlinks,linkcolor = black,hypertexnames = false,citecolor = black]{hyperref} %links in allen referenzen
+\usepackage[version=3]{mhchem}%Chemische Formeln ohne Bild
+\usepackage{epstopdf}         %pdflatex kann kein eps
+%\usepackage{scrhack}          %scrreprt warned sonst irgendwas mit floatkrempel
+\usepackage{subfig}           %subfigures eben
+\usepackage{keyval}           %noetig fuer subfig
+\captionsetup[subfloat]{farskip=2pt,captionskip=2pt} %engere zeilenabstände in subfloats
+\usepackage{amssymb}          %winkelzeichen
+\usepackage{wrapfig}          %aawwwwww yeah
+%\usepackage{chngcntr}         %fußnoten durchs ganze dokument nummerieren
+%\counterwithout{footnote}{chapter} %siehe \usepackage{chngcntr}
+%\renewcommand{\thefootnote}{\fnsymbol{footnote}} %stern als fußnote
+\newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}%shortcut: siehe unten
+\newcommand{\mr}[3]{\multirow{#1}{#2}{#3}}%shortcut: komprimiert tabellencode beim fusen
+\renewcommand{\t}{\text}       %shortcut: \t statt \text für matheumgebungen
+\newcommand{\sub}{\textsubscript}  %shortcut
+\renewcommand{\sup}{\textsuperscript} %shortcut
+%\numberwithin{equation}{section}
+\begin{document}
+\include{deckblatt}
+
+\pagenumbering{roman}
+\tableofcontents
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\section{Content}
+
+\clearpage\pagenumbering{roman}\setcounter{page}{1}
+\bibliographystyle{pimbib}
+\bibliography{lit}
+\end{document}
